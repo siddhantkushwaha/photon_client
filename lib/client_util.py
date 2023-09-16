@@ -1,3 +1,8 @@
+import json
+import os
+
+import params
+
 buffer_size = 4096
 end_char = b'$'
 
@@ -25,3 +30,11 @@ def receive_data(socket):
 
     data = data[:-1]
     return data
+
+
+def read_config():
+    pt = os.path.join(params.data_dir, 'config.json')
+    with open(pt, 'r') as fp:
+        data = json.load(fp)
+    hostname, port = data['hostname'], data['port']
+    return hostname, port
