@@ -1,4 +1,5 @@
 {
   "hostname": "",
-  "port": 0
+  "port": 0,
+  "api_key": ""
 }

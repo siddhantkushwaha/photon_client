@@ -36,5 +36,7 @@ def read_config():
     pt = os.path.join(params.data_dir, 'config.json')
     with open(pt, 'r') as fp:
         data = json.load(fp)
-    hostname, port = data['hostname'], data['port']
-    return hostname, port
+    hostname = data['hostname']
+    port = data['port']
+    api_key = data['api_key']
+    return hostname, port, api_key
